@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #1f2937;
+  background: #f1f5f9;
+}
+header,
+footer {
+  text-align: center;
+}
+
+.page-header {
+  margin-bottom: 24px;
+}
+h1,
+h2 {
+  color: #12345a;
+}
+h1 {
+  margin-bottom: 4px;
+  font-size: 2rem;
+}
+h2 {
+  margin-top: 0;
+  font-size: 1.35rem;
+}
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+.card {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 3px 10px #12345a12;
+}
+.card label {
+  display: block;
+  margin: 14px 0 5px;
+  font-weight: bold;
+}
+.error-message {
+  display: block;
+  min-height: 0;
+  color: #b42318;
+  font-size: 0.9rem;
+}
+input[aria-invalid="true"],
+select[aria-invalid="true"] {
+  border-color: #b42318;
+}
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #94a3b8;
+  border-radius: 5px;
+  background: #fff;
+  color: #1f2937;
+  font: inherit;
+}
+textarea {
+  min-height: 100px;
+  resize: vertical;
+  overflow-wrap: anywhere;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}
+form > button {
+  margin: 18px 8px 0 0;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 5px;
+  background: #145ca8;
+  color: #fff;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+form > button:hover {
+  background: #0d437d;
+}
+form > .reset-button {
+  background: #475569;
+}
+form > .reset-button:hover {
+  background: #334155;
+}
+.result {
+  min-height: 70px;
+  margin: 14px 0;
+  padding: 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  background: #f8fafc;
+  overflow-wrap: anywhere;
+}
+#summary p {
+  margin-top: 0;
+}
+.score-badge {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  padding: 4px 9px;
+  border-radius: 20px;
+  background: #dbeafe;
+  color: #12345a;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+.classification-excellent {
+  border-left: 5px solid #15803d;
+}
+.classification-good {
+  border-left: 5px solid #145ca8;
+}
+.classification-needs-improvement {
+  border-left: 5px solid #b45309;
+}
+.recommendation {
+  display: none;
+  visibility: hidden;
+  border-left: 5px solid #145ca8;
+  font-size: 1.05rem;
+  font-weight: bold;
+}
+.recommendation.visible {
+  display: block;
+  visibility: visible;
+}
+.page-footer {
+  margin-top: 24px;
+  color: #475569;
+}
+@media (max-width: 700px) {
+  body {
+    padding: 16px;
+  }
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    padding: 16px;
+  }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Feedback</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1>Student Feedback</h1>
+    <p>Share your feedback to help us improve our courses.</p>
+  </header>
+
+  <main class="dashboard">
+    <section class="card">
+      <h2>Feedback Form</h2>
+      <form id="feedbackForm" novalidate>
+        <label for="student">Student name</label>
+        <input id="student" aria-describedby="studentError" required>
+        <small id="studentError" class="error-message"></small>
+
+        <label for="course">Course name</label>
+        <input id="course" aria-describedby="courseError" required>
+        <small id="courseError" class="error-message"></small>
+
+        <label for="faculty">Faculty name</label>
+        <input id="faculty" aria-describedby="facultyError" required>
+        <small id="facultyError" class="error-message"></small>
+
+        <label for="teaching">Teaching rating (1–5)</label>
+        <select id="teaching" aria-describedby="teachingError" required>
+          <option value="">Select a rating</option>
+          <option>1</option><option>2</option><option>3</option>
+          <option>4</option><option>5</option>
+        </select>
+        <small id="teachingError" class="error-message"></small>
+
+        <label for="practical">Practical / Lab rating (1–5)</label>
+        <select id="practical" aria-describedby="practicalError" required>
+          <option value="">Select a rating</option>
+          <option>1</option><option>2</option><option>3</option>
+          <option>4</option><option>5</option>
+        </select>
+        <small id="practicalError" class="error-message"></small>
+
+        <label for="content">Content rating (1–5)</label>
+        <select id="content" aria-describedby="contentError" required>
+          <option value="">Select a rating</option>
+          <option>1</option><option>2</option><option>3</option>
+          <option>4</option><option>5</option>
+        </select>
+        <small id="contentError" class="error-message"></small>
+
+        <label for="comments">Comments (optional)</label>
+        <textarea id="comments" rows="4"></textarea>
+
+        <label for="suggestion">Improvement suggestion (optional)</label>
+        <textarea id="suggestion" rows="3"></textarea>
+
+        <button type="submit">Submit Feedback</button>
+        <button type="button" id="resetButton" class="reset-button">Reset</button>
+        <p id="formStatus" class="form-status" role="status"></p>
+      </form>
+    </section>
+
+    <section class="card results">
+      <h2>Your Results</h2>
+      <div id="summary" class="result">
+        <p id="summaryText">Your submitted feedback will appear here.</p>
+        <span id="scoreBadge" class="score-badge">Average: --/5</span>
+      </div>
+      <div id="analysis" class="result" aria-live="polite">
+        Ratings and improvement areas will appear here after submission.
+      </div>
+      <div id="recommendation" class="result recommendation" aria-live="polite">
+        A recommendation will appear here.
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <p>Thank you for helping us improve.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
